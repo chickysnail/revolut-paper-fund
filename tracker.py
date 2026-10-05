@@ -61,8 +61,9 @@ def build_fund(prices, pf):
         if t not in prices.columns or prices[t].dropna().empty:
             raise SystemExit(f"No price data for {t}")
         s = prices[t].loc[prices.index >= pd.Timestamp(r["start_date"])].dropna()
-        if s.empty:
-            raise SystemExit(f"No price for {t} on/after {r['start_date']}")
+        if s.empty:  # start date not closed yet: fall back to latest available close
+            s = prices[t].dropna().iloc[[-1]]
+            print(f"{t}: no close on/after {r['start_date']}, using latest ({s.index[0].date()})")
         sp = r["start_price"] if pd.notna(r["start_price"]) else s.iloc[0]
         norm[t] = s / sp * 100
     norm = pd.DataFrame(norm).sort_index().ffill()
@@ -94,7 +95,7 @@ def make_chart(norm, fund, path):
     fig, ax = plt.subplots(figsize=(8, 5), dpi=120)
     for t in norm.columns:
         ax.plot(norm.index, norm[t], color="grey", alpha=0.25, lw=0.8)
-    ax.plot(fund.index, fund.values, color="tab:blue", lw=3, label="Fund")
+    ax.plot(fund.index, fund.values, color="tab:blue", lw=3, marker="o", markevery=[len(fund) - 1], label="Fund")
     ax.axhline(100, color="black", ls="--", lw=1)
     ax.set_title("Paper fund (equal weight, start = 100)")
     ax.grid(alpha=0.3)
@@ -152,10 +153,6 @@ def main():
         buffered = (pd.Timestamp(pf["start_date"].min()) - pd.Timedelta(days=7)).strftime("%Y-%m-%d")
         prices = fetch_prices(pf["ticker"].tolist(), buffered)
 
-    idx = pd.to_datetime(prices.index).tz_localize(None)
-    if not (idx >= pd.Timestamp(pf["start_date"].min())).any():
-        print(f"No closes on/after {pf['start_date'].min()} yet; fund has not started. Nothing written.")
-        return
     norm, fund = build_fund(prices, pf)
     fund.rename("fund_value").round(4).to_csv(out / "fund_history.csv", index_label="date")
     make_chart(norm, fund, out / "fund_chart.png")
