@@ -110,6 +110,43 @@ def pct(x):
     return f"{x * 100:+.2f}%"
 
 
+def load_forecast():
+    """Earliest revolut_forecast_YYYY-MM-DD.csv (see CLAUDE.md), or (None, None)."""
+    files = sorted(ROOT.glob("revolut_forecast_*.csv"))
+    if not files:
+        return None, None
+    date = files[0].stem.removeprefix("revolut_forecast_")
+    return date, pd.read_csv(files[0]).set_index("ticker")
+
+
+def forecast_section(norm, fund):
+    date, fc = load_forecast()
+    if fc is None:
+        return []
+    actual = norm.iloc[-1] / 100 - 1
+    promised = fc["expected_return_pct"].reindex(norm.columns) / 100
+    fund_promised = promised.mean()
+    days = (fund.index[-1] - fund.index[0]).days
+    on_track = fund_promised * min(days, 365) / 365
+    lines = [
+        "",
+        "## Revolut forecast vs actual",
+        "",
+        f"Forecast snapshot from {date}. Horizon not stated by Revolut; assumed 12 months.",
+        "",
+        f"- Fund promised: **{pct(fund_promised)}** in 12 months",
+        f"- Pro-rated for {days} days (capped at 12 months): {pct(on_track)}",
+        f"- Actual so far: **{pct(fund.iloc[-1] / 100 - 1)}**",
+        "",
+        "| Stock | Promised | Actual |",
+        "|---|---|---|",
+    ]
+    for t in actual.sort_values(ascending=False).index:
+        p = promised.get(t)
+        lines.append(f"| {t} | {pct(p) if pd.notna(p) else '-'} | {pct(actual[t])} |")
+    return lines
+
+
 def write_readme(path, norm, fund, demo):
     last_date = fund.index[-1].date()
     since = (norm.iloc[-1] / 100 - 1).sort_values()
@@ -131,6 +168,7 @@ def write_readme(path, norm, fund, demo):
     lines += [f"- {t}: {pct(v)}" for t, v in since[::-1].head(3).items()]
     lines += ["", "**Worst 3 since start**", ""]
     lines += [f"- {t}: {pct(v)}" for t, v in since.head(3).items()]
+    lines += forecast_section(norm, fund)
     lines += ["", "_Imaginary equal-weight buy-and-hold fund, not a real investment._", ""]
     Path(path).write_text("\n".join(lines))
 

@@ -1,0 +1,21 @@
+ticker,name,risk,expected_return_pct
+NVDA,NVIDIA,Higher,56.21
+MSFT,Microsoft,Medium,29.90
+AMZN,Amazon,Medium,30.67
+AVGO,Broadcom,Higher,56.39
+MA,Mastercard,Medium,31.18
+PLTR,Palantir,Higher,30.42
+ORCL,Oracle,Higher,34.94
+AMAT,Applied Materials,Higher,33.81
+STX,Seagate Technology,Higher,56.29
+GILD,Gilead Sciences,Medium,28.18
+WDC,Western Digital,Higher,48.84
+COHR,Coherent Corporation,Higher,34.52
+FIX,Comfort Systems USA,Higher,28.46
+NU,Nu Holdings,Higher,33.48
+CIEN,Ciena Corporation,Higher,41.51
+HUM,Humana,Higher,48.65
+FLEX,Flextronics International,Higher,29.57
+CRDO,Credo Technology Group,Higher,28.09
+AFRM,Affirm Holdings,Higher,34.11
+CNH,CNH Industrial,Medium,29.83
