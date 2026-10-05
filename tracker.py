@@ -148,8 +148,14 @@ def main():
         pf["start_price"] = np.nan
         prices = demo_prices(pf["ticker"].tolist(), pf["start_date"].iloc[0])
     else:
-        prices = fetch_prices(pf["ticker"].tolist(), pf["start_date"].min())
+        # look-back buffer: Yahoo returns nothing for an empty start..today window
+        buffered = (pd.Timestamp(pf["start_date"].min()) - pd.Timedelta(days=7)).strftime("%Y-%m-%d")
+        prices = fetch_prices(pf["ticker"].tolist(), buffered)
 
+    idx = pd.to_datetime(prices.index).tz_localize(None)
+    if not (idx >= pd.Timestamp(pf["start_date"].min())).any():
+        print(f"No closes on/after {pf['start_date'].min()} yet; fund has not started. Nothing written.")
+        return
     norm, fund = build_fund(prices, pf)
     fund.rename("fund_value").round(4).to_csv(out / "fund_history.csv", index_label="date")
     make_chart(norm, fund, out / "fund_chart.png")
