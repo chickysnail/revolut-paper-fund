@@ -2,55 +2,55 @@
 
 ![chart](fund_chart.png)
 
-**Fund value: 86.59** (as of 2026-11-03, start = 100)
+**Fund value: 85.07** (as of 2026-11-04, start = 100)
 
 | Period | Return |
 |---|---|
-| 1 day | +1.90% |
-| 1 week | -3.17% |
-| Since start | -13.41% |
+| 1 day | -1.76% |
+| 1 week | -6.80% |
+| Since start | -14.93% |
 
 **Best 3 since start**
 
-- GILD: +15.79%
-- MA: +14.80%
-- HUM: +3.63%
+- GILD: +20.64%
+- MA: +19.33%
+- MSFT: +5.83%
 
 **Worst 3 since start**
 
-- COHR: -37.81%
-- STX: -31.64%
-- AMAT: -29.57%
+- COHR: -41.53%
+- STX: -37.20%
+- FIX: -36.30%
 
 ## Revolut forecast vs actual
 
 Forecast snapshot from 2026-10-05. Horizon not stated by Revolut; assumed 12 months.
 
 - Fund promised: **+37.25%** in 12 months
-- Pro-rated for 29 days (capped at 12 months): +2.96%
-- Actual so far: **-13.41%**
+- Pro-rated for 30 days (capped at 12 months): +3.06%
+- Actual so far: **-14.93%**
 
 | Stock | Promised | Actual |
 |---|---|---|
-| GILD | +28.18% | +15.79% |
-| MA | +31.18% | +14.80% |
-| HUM | +48.65% | +3.63% |
-| AMZN | +30.67% | -0.28% |
-| MSFT | +29.90% | -0.80% |
-| AFRM | +34.11% | -3.72% |
-| PLTR | +30.42% | -7.39% |
-| AVGO | +56.39% | -8.38% |
-| ORCL | +34.94% | -11.11% |
-| CNH | +29.83% | -11.80% |
-| NVDA | +56.21% | -13.48% |
-| WDC | +48.84% | -21.35% |
-| CIEN | +41.51% | -23.00% |
-| NU | +33.48% | -23.52% |
-| FLEX | +29.57% | -24.55% |
-| FIX | +28.46% | -24.98% |
-| CRDO | +28.09% | -28.98% |
-| AMAT | +33.81% | -29.57% |
-| STX | +56.29% | -31.64% |
-| COHR | +34.52% | -37.81% |
+| GILD | +28.18% | +20.64% |
+| MA | +31.18% | +19.33% |
+| MSFT | +29.90% | +5.83% |
+| AMZN | +30.67% | +5.82% |
+| HUM | +48.65% | +3.52% |
+| AFRM | +34.11% | +1.12% |
+| PLTR | +30.42% | -9.35% |
+| AVGO | +56.39% | -10.21% |
+| CNH | +29.83% | -11.95% |
+| ORCL | +34.94% | -12.84% |
+| NVDA | +56.21% | -16.23% |
+| NU | +33.48% | -21.01% |
+| WDC | +48.84% | -26.68% |
+| CIEN | +41.51% | -30.14% |
+| AMAT | +33.81% | -31.88% |
+| FLEX | +29.57% | -33.85% |
+| CRDO | +28.09% | -35.76% |
+| FIX | +28.46% | -36.30% |
+| STX | +56.29% | -37.20% |
+| COHR | +34.52% | -41.53% |
 
 _Imaginary equal-weight buy-and-hold fund, not a real investment._
