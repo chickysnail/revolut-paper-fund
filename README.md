@@ -2,56 +2,56 @@
 
 ![chart](fund_chart.png)
 
-**Fund value: 85.99** (as of 2026-11-11, start = 100)
+**Fund value: 84.99** (as of 2026-11-12, start = 100)
 
 | Period | Return |
 |---|---|
-| 1 day | +3.41% |
-| 1 week | +1.09% |
-| 1 month | -14.57% |
-| Since start | -14.01% |
+| 1 day | -1.16% |
+| 1 week | +8.76% |
+| 1 month | -13.54% |
+| Since start | -15.01% |
 
 **Best 3 since start**
 
-- GILD: +17.35%
-- MA: +17.21%
-- HUM: +10.69%
+- GILD: +16.12%
+- MA: +15.76%
+- HUM: +10.04%
 
 **Worst 3 since start**
 
-- STX: -37.81%
-- CRDO: -33.45%
-- FLEX: -32.37%
+- STX: -38.55%
+- CRDO: -34.20%
+- FIX: -34.09%
 
 ## Revolut forecast vs actual
 
 Forecast snapshot from 2026-10-05. Horizon not stated by Revolut; assumed 12 months.
 
 - Fund promised: **+37.25%** in 12 months
-- Pro-rated for 37 days (capped at 12 months): +3.78%
-- Actual so far: **-14.01%**
+- Pro-rated for 38 days (capped at 12 months): +3.88%
+- Actual so far: **-15.01%**
 
 | Stock | Promised | Actual |
 |---|---|---|
-| GILD | +28.18% | +17.35% |
-| MA | +31.18% | +17.21% |
-| HUM | +48.65% | +10.69% |
-| AMZN | +30.67% | +5.88% |
-| MSFT | +29.90% | -0.77% |
-| AVGO | +56.39% | -4.77% |
-| CNH | +29.83% | -6.09% |
-| PLTR | +30.42% | -8.98% |
-| AFRM | +34.11% | -9.24% |
-| ORCL | +34.94% | -9.56% |
-| NU | +33.48% | -18.84% |
-| CIEN | +41.51% | -24.03% |
-| AMAT | +33.81% | -27.14% |
-| NVDA | +56.21% | -27.28% |
-| WDC | +48.84% | -29.06% |
-| COHR | +34.52% | -29.71% |
-| FIX | +28.46% | -32.19% |
-| FLEX | +29.57% | -32.37% |
-| CRDO | +28.09% | -33.45% |
-| STX | +56.29% | -37.81% |
+| GILD | +28.18% | +16.12% |
+| MA | +31.18% | +15.76% |
+| HUM | +48.65% | +10.04% |
+| AMZN | +30.67% | +6.38% |
+| AVGO | +56.39% | +0.51% |
+| MSFT | +29.90% | -0.42% |
+| PLTR | +30.42% | -9.41% |
+| CNH | +29.83% | -10.00% |
+| ORCL | +34.94% | -10.46% |
+| AFRM | +34.11% | -11.92% |
+| NU | +33.48% | -22.07% |
+| CIEN | +41.51% | -24.56% |
+| WDC | +48.84% | -29.53% |
+| AMAT | +33.81% | -29.75% |
+| NVDA | +56.21% | -30.44% |
+| COHR | +34.52% | -30.44% |
+| FLEX | +29.57% | -33.09% |
+| FIX | +28.46% | -34.09% |
+| CRDO | +28.09% | -34.20% |
+| STX | +56.29% | -38.55% |
 
 _Imaginary equal-weight buy-and-hold fund, not a real investment._
